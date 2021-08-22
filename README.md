@@ -12,6 +12,10 @@ Twint utilizes Twitter's search operators to let you scrape Tweets from specific
 
 Twint also makes special queries to Twitter allowing you to also scrape a Twitter user's followers, Tweets a user has liked, and who they follow **without** any authentication, API, Selenium, or browser emulation.
 
+## Changes with the original version
+
+- *Hotfix*: Geolocalisation of tweets has been disabled, has it causes issues and I don't have the need for it.
+
 ## tl;dr Benefits
 Some of the benefits of using Twint vs Twitter API:
 - Can fetch almost __all__ Tweets (Twitter API limits to last 3200 Tweets only);
