@@ -42,7 +42,7 @@ def _get_mentions(tw):
     except KeyError:
         mentions = []
     return mentions
-"""
+
 
 def _get_reply_to(tw):
     try:
@@ -57,7 +57,7 @@ def _get_reply_to(tw):
     except KeyError:
         reply_to = []
     return reply_to
-
+"""
 
 def getText(tw):
     """Replace some text
@@ -97,7 +97,7 @@ def Tweet(tw, config):
     t.place = ""
     t.timezone = strftime("%z", localtime())
     #t.mentions = _get_mentions(tw)
-    t.reply_to = _get_reply_to(tw)
+    #t.reply_to = _get_reply_to(tw)
     try:
         t.urls = [_url['expanded_url'] for _url in tw['entities']['urls']]
     except KeyError:
