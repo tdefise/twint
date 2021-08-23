@@ -88,7 +88,6 @@ def createIndex(config, instance, **scope):
                         "geo_tweet": {"type": "geo_point"},
                         "photos": {"type": "text"},
                         "user_rt_id": {"type": "keyword"},
-                        "mentions": {"type": "keyword", "normalizer": "hashtag_normalizer"},
                         "source": {"type": "keyword"},
                         "user_rt": {"type": "keyword"},
                         "retweet_id": {"type": "keyword"},
@@ -252,11 +251,13 @@ def Tweet(Tweet, config):
         j_data["_source"].update({"photos": _photos})
     if Tweet.thumbnail:
         j_data["_source"].update({"thumbnail": Tweet.thumbnail})
-    if Tweet.mentions:
+    """
+    if c.mentions:
         _mentions = []
         for mention in Tweet.mentions:
             _mentions.append(mention)
         j_data["_source"].update({"mentions": _mentions})
+    """
     if Tweet.urls:
         _urls = []
         for url in Tweet.urls:

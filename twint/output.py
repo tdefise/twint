@@ -88,9 +88,11 @@ def _output(obj, output, config, **extra):
             logme.debug(__name__ + ':_output:Lowercase:tweet')
             obj.username = obj.username.lower()
             author_list.update({obj.username})
+            """
             for dct in obj.mentions:
                 for key, val in dct.items():
                     dct[key] = val.lower()
+            """
             for i in range(len(obj.hashtags)):
                 obj.hashtags[i] = obj.hashtags[i].lower()
             for i in range(len(obj.cashtags)):

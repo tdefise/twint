@@ -27,10 +27,8 @@ Tweet_formats = {
     'timestamp': '%H:%M:%S'
 }
 
-
+"""
 def _get_mentions(tw):
-    """Extract mentions from tweet
-    """
     logme.debug(__name__ + ':get_mentions')
     try:
         mentions = [
@@ -44,7 +42,7 @@ def _get_mentions(tw):
     except KeyError:
         mentions = []
     return mentions
-
+"""
 
 def _get_reply_to(tw):
     try:
@@ -98,7 +96,7 @@ def Tweet(tw, config):
     # -> failed to parse field [place] of type [keyword] in document with id
     t.place = ""
     t.timezone = strftime("%z", localtime())
-    t.mentions = _get_mentions(tw)
+    #t.mentions = _get_mentions(tw)
     t.reply_to = _get_reply_to(tw)
     try:
         t.urls = [_url['expanded_url'] for _url in tw['entities']['urls']]
