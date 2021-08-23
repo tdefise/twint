@@ -242,8 +242,6 @@ def Tweet(Tweet, config):
         j_data["_source"].update({"user_rt": Tweet.user_rt})
         j_data["_source"].update({"retweet_id": Tweet.retweet_id})
         j_data["_source"].update({"retweet_date": Tweet.retweet_date})
-    if Tweet.reply_to:
-        j_data["_source"].update({"reply_to": Tweet.reply_to})
     if Tweet.photos:
         _photos = []
         for photo in Tweet.photos:
